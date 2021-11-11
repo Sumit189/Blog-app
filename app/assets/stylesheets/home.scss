@@ -1,0 +1,355 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body{
+  background: #F2F0DF;
+}
+
+li a{
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+}
+//-------------
+//Latest Post
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-family: 'Montserrat', sans-serif;
+}
+.row {
+  width: 100%;
+  font-family: 'Roboto Slab', serif;
+  font-size: 19px;
+  line-height: 33px;
+}
+
+.row-big-card .cont {
+  box-shadow: 0 0 30px 0 rgba(0,0,0,.15);
+  margin: 30px auto;
+  width: calc(100% - 40px);
+  max-width: 70%;
+  padding: 0;
+  position: relative;
+}
+
+a.card-link {
+  color: #1A1A1A;
+  display: block;
+  text-decoration: none;
+}
+
+.card-img {
+  padding-left: 45%;
+  position: relative;
+}
+
+.row-big-card .cont .card-inner {
+  padding: 40px 20px 0 60px;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: white;
+  width: 40%;
+}
+
+.card-img div {
+  display: block;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  padding-bottom: 64%;
+}
+
+.card-inner h4 {
+  font-size: 76px;
+  line-height: 82px;
+  letter-spacing: -1px;
+  margin: 0 0 1.5%;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+.inner-text p {
+  margin: 1.2% 0 0;
+  font-size: 20px;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+.inner-text {
+  margin: 4.5% 0;
+  padding: 3% 0 0;
+  position: relative;
+}
+.inner-text:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 6px;
+  background: #1A1A1A;
+  top: 0;
+  left: 0;
+}
+
+.card-inner h4 {
+  font-size: 28px;
+  line-height: 29px;
+  font-weight: bold;
+  -webkit-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.row-big-card .cont:hover .card-img img, .row-big-card .cont:hover .card-img div {
+  -webkit-clip-path: polygon(0 0, 92% 0, 100% 100%, 8% 100%);
+  clip-path: polygon(0 0, 92% 0, 100% 100%, 8% 100%);
+}
+
+span.cta-card {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 50px;
+  text-transform: uppercase;
+  padding: 0 13%;
+}
+
+a.card-link:hover span.cta-card {
+  color: white;
+}
+
+@media all and (max-width: 1000px) {
+  .card-img div {
+    padding-bottom: 100%;
+  }
+
+  @media all and (max-width: 1000px) {
+    .row-big-card .cont .card-inner {
+      padding: 0 20px 30px;
+      position: relative;
+      margin: 0 auto;
+      z-index: 3;
+      bottom: 0;
+      background: white;
+      width: calc(100% - 20px);
+    }
+    .row-big-card .cont .card-img div {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+    }
+    .row-big-card .cont:hover .card-img img, .row-big-card .cont:hover .card-img div {
+      -webkit-clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
+      clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
+    }
+    .card-img {
+      padding-left: 0;
+    }
+    .card-img div {
+      padding-bottom: 64%;
+    }
+    .card-inner h4 {
+      font-size: calc(30px + (48 - 30) * (100vw - 320px) / (610 - 320));
+      line-height: calc(36px + (66 - 36) * (100vw - 320px) / (610 - 320));
+    }
+    .card-inner p {
+      font-size: calc(14px + (19 - 14) * (100vw - 320px) / (610 - 320));
+      line-height: calc(18px + (33 - 18) * (100vw - 320px) / (610 - 320));
+    }
+    span.cta-card {
+      font-size: calc(15px + (18 - 15) * (100vw - 320px) / (610 - 320));
+      line-height: calc(34px + (60 - 34) * (100vw - 320px) / (610 - 320));
+    }
+    .inner-text p {
+      margin: 1.2% 0 0;
+      font-size: 12px;
+      -webkit-transition: all .1s ease-in-out;
+      transition: all .1s ease-in-out;
+    }
+  }
+}
+
+//---------------------
+//Post cards
+
+$color_white: #fff;
+$color_prime: #f1494c;
+$color_grey: #e2e2e2;
+$color_grey_dark: #a2a2a2;
+
+.blog-card {
+  box-shadow:0 0 13px 1px hsla(0,0%,4%,.2);
+  display: flex;
+  flex-direction: column;
+  margin-left: 16%;
+  margin-bottom: 1.6%;
+  background: $color_white;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+  a {
+    color: inherit;
+    &:hover {
+      color: $color_prime;
+    }
+  }
+  &:hover {
+    .photo {
+      transform: scale(1.3) rotate(3deg);
+    }
+  }
+  .meta {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+  }
+  .photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform .2s;
+  }
+  .description {
+    padding: 1rem;
+    background: $color_white;
+    position: relative;
+    z-index: 1;
+    h1,
+    h2 {
+      font-family: Poppins, sans-serif;
+    }
+    h1 {
+      line-height: 1;
+      margin: 0;
+      font-size: 1.7rem;
+    }
+    h2 {
+      font-size: 1rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $color_grey_dark;
+      margin-top: 5px;
+    }
+    .read-more {
+      text-align: right;
+      a {
+        color: $color_prime;
+        display: inline-block;
+        position: relative;
+        &:after {
+          content: "\f061";
+          font-family: FontAwesome;
+          margin-left: -10px;
+          opacity: 0;
+          vertical-align: middle;
+          transition: margin .3s, opacity .3s;
+        }
+
+        &:hover:after {
+          margin-left: 5px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  p {
+    position: relative;
+    margin: 1rem 0 0;
+    &:first-of-type {
+      margin-top: 1.25rem;
+      &:before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        background: $color_prime;
+        width: 35px;
+        top: -0.75rem;
+        border-radius: 3px;
+      }
+    }
+  }
+
+
+  @media (min-width: 550px) {
+    flex-direction: row;
+    max-width: 67%;
+    .meta {
+      flex-basis: 40%;
+      height: auto;
+    }
+    .description {
+      flex-basis: 60%;
+      &:before {
+        transform: skewX(-3deg);
+        content: "";
+        background: #fff;
+        width:10%;
+        position: absolute;
+        //left: -10px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+
+.float{
+  z-index: 10;
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color: #ff0044;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+  margin-top:22px;
+}
+
+
+.float2{
+  z-index: 10;
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:120px;
+  right:40px;
+  background-color: #ff0044;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.float:hover, .float2:hover{
+  background-color:#fff;
+  color: #ff0044;
+  box-shadow: 2px 2px 3px #463b3b;
+}
+
+.nopost{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'PT Sans', sans-serif;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 81vh;
+}
