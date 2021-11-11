@@ -1,0 +1,85 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.wrapper{
+  margin: 25px auto;
+  width: 50%;
+}
+
+.image-head{
+  width: 50%;
+  height: 20%;
+  border-radius: 0.4em;
+  box-shadow:0 0 13px 1px hsla(0,0%,4%,.2)
+}
+.content{
+  margin: 25px auto;
+  width: 50%;
+}
+
+
+.container {
+  background-color: #eef2f5;
+  width: 400px
+}
+
+.addtxt {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 13px;
+  width: 350px;
+  background-color: #e5e8ed;
+  font-weight: 500
+}
+
+
+
+.second {
+  width: 80%;
+  height: 10%;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.text1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #56575b
+}
+
+.text2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 6px;
+  color: #56575b
+}
+
+.text3 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.text3 a{
+  color: #000;
+}
+
+.add_cmnt{
+  margin: 0 auto;
+  width: 30%;
+  border-radius: 0.4em;
+}
+
+.cmnt_box{
+  transition: opacity 1.4s ease-out;
+}
+
+.content_box{
+  @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+  font-family: 'PT Sans', sans-serif;
+  font-size: 22px;
+  line-height: 2;
+}

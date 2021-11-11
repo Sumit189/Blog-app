@@ -1,0 +1,81 @@
+<div class="card">
+  <div class="card-header">
+    <center>
+        <%= image_tag @post.image, class: "image-head" %>
+    </center>
+  </div>
+  <div class="card-body">
+    <%= link_to ('<i class="fa fa-edit fa-lg my-float"></i>').html_safe, edit_post_path(@post), class:"float2" %>
+    <%= link_to ('<i class="fa fa-trash fa-lg my-float"></i>').html_safe, post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class:"float" %>
+
+    <div class="content">
+      <h1><%= @post.title %></h1>
+      <p><%= simple_format(@post.content) %></p>
+    </div>
+    <hr>
+    <div class="card" style="width: 40%; margin: 0 auto">
+      <div class="card-header">
+        <h2>Comments</h2>
+      </div>
+
+    <% @comments.each do |cmnt| %>
+      <br>
+      <div class="d-flex justify-content-center">
+        <div class="second py-2 px-2"> <span class="text1"><%= cmnt.comment %></span>
+          <div class="d-flex justify-content-between py-1 pt-2">
+            <div><%= image_tag "user.png", style: "width: 40px" %><span class="text2"><%= cmnt.user_name %></span></div>
+            <% if current_user.id.to_s == cmnt.uid.to_s || current_user.name.to_s == "admin" %>
+            <div><span class="text3"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe , [cmnt.post, cmnt], method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger text-white" %></span></div>
+<!--              <span class="text3"><%#= link_to ('<i class="fa fa-edit"></i>').html_safe, edit_post_comment_path(@post) %></span>-->
+              <% end %>
+              </div>
+        </div>
+      </div>
+      <% end %>
+      <div class="d-flex" style="margin-top: 3%">
+        <div class="mx-auto">
+          <%= will_paginate @comments, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+        </div>
+      </div>
+      <center><button class="btn btn-danger" onclick="comment_section()" id="cmnt_btn" style="margin-top: 1%; margin-bottom: 1%">Add Comment</button></center>
+    </div>
+
+  </div>
+  <div id="cmnt_box" class="card-footer" style="background: #f2f0e4; display: none">
+    <div class="add_cmnt">
+    <h2>Add a comment:</h2>
+    <%= form_with model: [ @post, @post.comments.build] do |form| %>
+      <div class="field">
+        <div class="input-group mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default"> <%= form.label :comment %></span>
+          </div>
+          <%= form.text_field :comment, class: 'form-control',autocomplete: 'off' %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Add comment", class:"btn btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
+
+<script>
+  var menu = document.getElementById("home");
+  menu.classList.add("active");
+
+  function comment_section() {
+    var x = document.getElementById("cmnt_box");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      document.getElementById("cmnt_btn").innerHTML = "X";
+    } else {
+      x.style.display = "none";
+      document.getElementById("cmnt_btn").innerHTML = "Add Comment";
+    }
+  }
+</script>

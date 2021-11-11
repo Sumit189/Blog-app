@@ -1,0 +1,26 @@
+<%= form_with(model: about, local: true) do |form| %>
+  <% if about.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(about.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% about.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="input-group mb-4">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default"> <%= form.label :about %></span>
+      </div>
+      <%= form.text_area :about, :rows => 20 , class: 'form-control' ,id:"formGroupExampleInput", placeholder:"About us" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit  class:"btn btn-success"%>
+  </div>
+<% end %>
