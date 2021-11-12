@@ -11,16 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <div class="input-group mb-4">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-default"> <%= form.label :about %></span>
-      </div>
-      <%= form.text_area :about, :rows => 20 , class: 'form-control' ,id:"formGroupExampleInput", placeholder:"About us" %>
-    </div>
+  <div class="form-group mb-4">
+    <label for="formGroupExampleInput2" style="font-size: 22px"><%= form.label :about %></label>
+    <%= form.text_area :about, :rows => 20 , class: 'form-control' ,id:"formGroupExampleInput", placeholder:"About" %>
   </div>
 
   <div class="actions">
-    <%= form.submit  class:"btn btn-success"%>
+    <%= form.submit  class:"btn btn-success", style:"width:100%"%>
   </div>
 <% end %>
