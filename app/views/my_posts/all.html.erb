@@ -29,7 +29,9 @@
       </div>
     </div>
     <!--  Posts-->
-    <h2 style="margin-left: 17%">All Posts</h2>
+    <% if @posts.count > 1 %>
+      <h2 style="margin-left: 17%">All Posts</h2>
+    <% end %>
     <div class="card-body">
       <% if params[:page].to_s == 1.to_s %>
         <% @my_other_posts[1..-1].each do |p| %>

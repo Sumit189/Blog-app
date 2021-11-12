@@ -11,6 +11,8 @@
     <% end %>
     <div class="content">
       <h1><%= @post.title %></h1>
+      <p><b>Posted: <%= (Date.today - @post.created_at.to_date ).to_i%> day ago</b></p>
+      <p><b>Author:</b> <%= User.find(@post.uid).name %></p>
       <p><%= simple_format(@post.content) %></p>
     </div>
     <hr>
