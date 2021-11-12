@@ -6,15 +6,9 @@
   width: 50%;
 }
 
-@media (max-width: 508px) {
-  .wrapper {
-    width: 70%;
-  }
-}
 
 .image-head{
-  width: 50%;
-  height: 20%;
+  width: 40%;
   border-radius: 0.4em;
   box-shadow:0 0 13px 1px hsla(0,0%,4%,.2)
 }
@@ -84,8 +78,32 @@
 
 .content_box{
   @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
-
   font-family: 'PT Sans', sans-serif;
   font-size: 22px;
   line-height: 2;
+}
+.cmnt_field{
+  width: 40%;
+  margin: 0 auto;
+}
+
+@media (max-width: 508px) {
+  .wrapper {
+    width: 70%;
+  }
+  .image-head{
+    width: 80%;
+  }
+  .content{
+    width: 90%;
+  }
+  .cmnt_field{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .add_cmnt{
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 0.4em;
+  }
 }

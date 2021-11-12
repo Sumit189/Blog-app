@@ -14,11 +14,10 @@
       <p><%= simple_format(@post.content) %></p>
     </div>
     <hr>
-    <div class="card" style="width: 40%; margin: 0 auto">
+    <div class="card cmnt_field">
       <div class="card-header">
         <h2>Comments</h2>
       </div>
-
     <% @comments.each do |cmnt| %>
       <br>
       <div class="d-flex justify-content-center">
