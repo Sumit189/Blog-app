@@ -6,6 +6,12 @@
   width: 50%;
 }
 
+@media (max-width: 508px) {
+  .wrapper {
+    width: 70%;
+  }
+}
+
 .image-head{
   width: 50%;
   height: 20%;
