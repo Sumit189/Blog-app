@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = @post.comments.build
     @comments = @post.comments.paginate(page: params[:page], per_page: 3)
   end
 

@@ -31,14 +31,14 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-a.card-link {
+.card-link {
   color: #1A1A1A;
   display: block;
   text-decoration: none;
 }
 
 .card-img {
-  padding-left: 45%;
+  padding-left: 55%;
   position: relative;
 }
 
@@ -51,6 +51,8 @@ a.card-link {
   bottom: 0;
   background: white;
   width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-img div {
@@ -66,24 +68,14 @@ a.card-link {
   width: 100%;
   padding-bottom: 64%;
 }
-
-.card-inner h4 {
-  font-size: 76px;
-  line-height: 82px;
-  letter-spacing: -1px;
-  margin: 0 0 1.5%;
-  -webkit-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-}
-
 .inner-text p {
   margin: 1.2% 0 0;
-  font-size: 20px;
+  font-size: 18px;
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
 }
 .inner-text {
-  margin: 4.5% 0;
+  margin: 2.5% 0;
   padding: 3% 0 0;
   position: relative;
 }
@@ -99,7 +91,7 @@ a.card-link {
 }
 
 .card-inner h4 {
-  font-size: 28px;
+  font-size: 24px;
   line-height: 29px;
   font-weight: bold;
   -webkit-transition: all .1s ease-in-out;
@@ -124,55 +116,58 @@ a.card-link:hover span.cta-card {
   color: white;
 }
 
-@media all and (max-width: 1000px) {
-  .card-img div {
-    padding-bottom: 100%;
+@media all and (max-width: 770px) {
+  .row-big-card .cont .card-inner {
+    padding: 0 20px 30px;
+    position: relative;
+    margin: 0 auto;
+    z-index: 3;
+    bottom: 0;
+    background: white;
+    width: calc(100% - 10px);
   }
-
-  @media all and (max-width: 1000px) {
-    .row-big-card .cont .card-inner {
-      padding: 0 20px 30px;
-      position: relative;
-      margin: 0 auto;
-      z-index: 3;
-      bottom: 0;
-      background: white;
-      width: calc(100% - 20px);
-    }
-    .row-big-card .cont .card-img div {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
-    }
-    .row-big-card .cont:hover .card-img img, .row-big-card .cont:hover .card-img div {
-      -webkit-clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
-      clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
-    }
-    .card-img {
-      padding-left: 0;
-    }
-    .card-img div {
-      padding-bottom: 64%;
-    }
-    .card-inner h4 {
-      font-size: calc(30px + (48 - 30) * (100vw - 320px) / (610 - 320));
-      line-height: calc(36px + (66 - 36) * (100vw - 320px) / (610 - 320));
-    }
-    .card-inner p {
-      font-size: calc(14px + (19 - 14) * (100vw - 320px) / (610 - 320));
-      line-height: calc(18px + (33 - 18) * (100vw - 320px) / (610 - 320));
-    }
-    span.cta-card {
-      font-size: calc(15px + (18 - 15) * (100vw - 320px) / (610 - 320));
-      line-height: calc(34px + (60 - 34) * (100vw - 320px) / (610 - 320));
-    }
-    .inner-text p {
-      margin: 1.2% 0 0;
-      font-size: 12px;
-      -webkit-transition: all .1s ease-in-out;
-      transition: all .1s ease-in-out;
-    }
+  .row-big-card .cont .card-img div {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+  }
+  .row-big-card .cont:hover .card-img img, .row-big-card .cont:hover .card-img div {
+    -webkit-clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
+    clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
+  }
+  .card-img {
+    padding-left: 0;
+  }
+  .card-img div {
+    padding-bottom: 64%;
+  }
+  .card-inner h4 {
+    font-size: calc(30px + (48 - 30) * (100vw - 320px) / (610 - 320));
+    line-height: calc(36px + (66 - 36) * (100vw - 320px) / (610 - 320));
+  }
+  .card-inner p {
+    font-size: calc(14px + (19 - 14) * (100vw - 320px) / (610 - 320));
+    line-height: calc(18px + (33 - 18) * (100vw - 320px) / (610 - 320));
+  }
+  span.cta-card {
+    font-size: calc(15px + (18 - 15) * (100vw - 320px) / (610 - 320));
+    line-height: calc(34px + (60 - 34) * (100vw - 320px) / (610 - 320));
+  }
+  .inner-text p {
+    margin: 1.2% 0 0;
+    font-size: 22px;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+  }
+  .card-inner h4 {
+    font-size: 30px;
+    line-height: 29px;
+    -webkit-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
   }
 }
+
+
+
 
 //---------------------
 //Post cards
@@ -194,6 +189,7 @@ $color_grey_dark: #a2a2a2;
   border-radius: 5px;
   overflow: hidden;
   z-index: 0;
+  width: 65%;
   a {
     color: inherit;
     &:hover {
@@ -281,7 +277,7 @@ $color_grey_dark: #a2a2a2;
   }
 
 
-  @media (min-width: 550px) {
+  @media (min-width: 750px) {
     flex-direction: row;
     max-width: 67%;
     .meta {

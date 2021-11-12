@@ -1,0 +1,26 @@
+<%= form_with model: [ post, comment] do |form| %>
+  <% if comment.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <ul>
+        <% comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <div class="input-group mb-4">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default"> <%= form.label :comment %></span>
+      </div>
+      <%= form.text_field :comment, class: 'form-control',autocomplete: 'off' %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add comment", class:"btn btn-danger", style:"width:100%" %>
+  </div>
+<% end %>
