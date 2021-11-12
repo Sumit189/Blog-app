@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'aboutus/info'
   devise_for :users
-  root 'home#index'
+  root 'home#index', page: 1
   get 'home/index'
   get 'myposts/all' => 'my_posts#all'
   get 'home/contactus'
