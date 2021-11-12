@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index', page: 1
   get 'home/index'
+  get 'myposts/all' => 'my_posts#all', page: 1
   get 'myposts/all' => 'my_posts#all'
   get 'home/contactus'
   get '/abouts/info' => 'abouts#info'
