@@ -1,11 +1,14 @@
 class AboutsController < ApplicationController
-  before_action :authenticate_user! , only: [:new]
   def info
     @abouts = About.last
   end
 
   def new
-    @about = About.new
+    if current_user.name.to_s == 'admin'.to_s
+      @about = About.new
+    else
+      redirect_to root_path
+    end
   end
   def edit
     @about = About.find(params[:id])
