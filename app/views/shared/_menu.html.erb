@@ -21,7 +21,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% Post.select(:category).map(&:category).uniq.each do |c| %>
               <li>
-                <%= link_to c, "/home/category?category=#{c}", class: "dropdown-item" %>
+                <%= link_to c.upcase_first, "/home/category?category=#{c}", class: "dropdown-item" %>
               </li>
               <li><hr class="dropdown-divider"></li>
           <% end %>

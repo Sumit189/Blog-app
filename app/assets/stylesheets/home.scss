@@ -5,6 +5,11 @@ body{
   background: #F2F0DF;
 }
 
+
+.margin_of_ap{
+  margin-left: 17%;
+}
+
 li a{
   font-family: 'Roboto Slab', serif;
   font-size: 20px;
@@ -117,6 +122,9 @@ a.card-link:hover span.cta-card {
 
 
 @media all and (max-width: 770px) {
+  .margin_of_ap{
+    margin-left: 0%;
+  }
   .row-big-card .cont .card-inner {
     padding: 0 20px 30px;
     position: relative;
@@ -173,7 +181,6 @@ a.card-link:hover span.cta-card {
   position: relative;
   }
 }
-
 
 
 
@@ -290,7 +297,7 @@ position: relative;
     .meta {
     flex-basis: 60%;
     height: auto;
-}
+    }
 .description {
 flex-basis: 60%;
         &:before {
@@ -356,3 +363,4 @@ justify-content: center;
 align-items: center;
 height: 81vh;
 }
+
