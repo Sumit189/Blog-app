@@ -51,6 +51,15 @@
     <% end %>
   </datalist>
 
+  <div class="field" style="width: 60%">
+    <div class="input-group mb-3">
+        <div class="input-group-text">
+          <%= form.check_box :receive_comment_notification, { checked: true } %>
+          <%= form.label :receive_comment_notification %>
+        </div>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit  class:"btn btn-success"%>
   </div>
