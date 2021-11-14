@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_destroy :delete_picture_from_s3
 
   def index
     @posts = Post.all
@@ -52,6 +53,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def delete_picture_from_s3
+    key = @post.image.split('amazonaws.com/')[1]
+    S3_BUCKET.object(key).delete
+    return true
+  rescue => e
+    # Do nothing. Leave the now defunct file sitting in the bucket.
+    return true
+  end
 
   private
   def post_params
