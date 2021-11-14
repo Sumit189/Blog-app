@@ -3,11 +3,12 @@
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
 <body>
-<p>Hi, <b><%= @user.name %></b>,</p>
+<p>Hi, <b><%= @user.name %></b></p>
 <p>You have a new comment on <b><%= @post.title %></b> </a>.</p>
 <p>---------------------------------</p>
 <p><b>Comment by: </b><%= @comment.user_name %>
 <p><b>Comment: </b><%= @comment.comment %></p>
+
 <%= link_to "View Post", post_url(@post), class: 'btn btn-danger' %>
 </body>
 </html>
