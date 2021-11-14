@@ -11,7 +11,7 @@
       <!--  Posts-->
       <% else %>
       <div class="card-body">
-        <h2 class="margin_of_ap">All Posts</h2>
+        <h2 class="margin_of_ap">All <%= @filter %> Posts</h2>
           <% @filtered_other_posts.each do |p| %>
             <div class="blog-card">
               <div class="meta">
