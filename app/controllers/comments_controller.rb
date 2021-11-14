@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        if @post.receive_comment_notification
+        if @post.receive_comment_notification and @post.id != current_user.id
           CommentMailer.comment_notification(@comment).deliver_now
         end
         format.html { redirect_to @post, notice: 'Comment Posted.' }
