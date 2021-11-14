@@ -36,6 +36,21 @@
       <%= form.file_field :image, class: 'form-control' %>
     </div>
   </div>
+
+  <div class="field">
+    <div class="input-group mb-4">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">   <%= form.label :category %></span>
+      </div>
+      <%= form.text_field :category, list: 'categories' ,class: 'form-control' %>
+    </div>
+  </div>
+  <datalist id="categories">
+    <% category.each do |categories| %>
+      <option value="<%= categories %>"></option>
+    <% end %>
+  </datalist>
+
   <div class="actions">
     <%= form.submit  class:"btn btn-success"%>
   </div>
