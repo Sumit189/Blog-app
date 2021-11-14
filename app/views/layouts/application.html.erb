@@ -23,11 +23,16 @@
   <body>
   <center>
     <% if alert != nil  %>
-  <p class="alert alert alert-danger wrapper"><%= alert %></p>
+      <div class="alert alert-danger alert-dismissible wrapper" role="alert">
+        <%= alert %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
     <% end %>
     <% if notice != nil  %>
-      <p class="alert alert alert-success wrapper"><%= notice %></p>
-    <% end %>
+      <div class="alert alert-success alert-dismissible wrapper" role="alert">
+        <%= notice %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
   </center>
     <%= yield %>
   </body>
