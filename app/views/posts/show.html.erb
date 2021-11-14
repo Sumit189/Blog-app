@@ -30,7 +30,7 @@
         <div class="second py-2 px-2"> <span class="text1"><%= cmnt.comment %></span>
           <div class="d-flex justify-content-between py-1 pt-2">
             <div><%= image_tag "user.png", style: "width: 40px" %><span class="text2"><%= cmnt.user_name %></span></div>
-            <% if user_signed_in? and (current_user.id.to_s == cmnt.uid.to_s || current_user.name.to_s == "admin") %>
+            <% if user_signed_in? and (current_user.id.to_s == cmnt.uid.to_s || current_user.name.to_s == "admin" || current_user.id.to_s == @post.uid.to_s) %>
             <div><span class="text3"><%= link_to ('<i class="fa fa-trash fa-lg"></i>').html_safe , [cmnt.post, cmnt], method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger text-white" %></span></div>
 <!--              <span class="text3"><%#= link_to ('<i class="fa fa-edit"></i>').html_safe, edit_post_comment_path(@post) %></span>-->
               <% end %>

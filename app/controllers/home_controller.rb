@@ -4,4 +4,11 @@ class HomeController < ApplicationController
     @other_posts = Post.order(:id).reverse_order.all.paginate(:page => params[:page], :per_page => 3)
     @latest_post = Post.last
   end
+
+  def category
+    @filter = params[:category].to_s.upcase_first
+    @filtered_posts = Post.where(:category => params[:category])
+    @filtered_other_posts = @filtered_posts.order(:id).reverse_order.all.paginate(:page => params[:page], :per_page => 3)
+  end
+
 end

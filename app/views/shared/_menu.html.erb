@@ -14,6 +14,19 @@
           <a class="nav-link" href="/myposts/all/?page=1"  id="mposts">My Posts</a>
         </li>
           <% end %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           Categories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <% Post.select(:category).map(&:category).uniq.each do |c| %>
+              <li>
+                <%= link_to c.upcase_first, "/home/category?category=#{c}", class: "dropdown-item" %>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+          <% end %>
+          </ul>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/abouts/info"  id="about">About us</a>
         </li>

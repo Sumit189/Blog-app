@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="card-header">
+    <!--  Latest Post-->
+    <% if @filtered_posts == nil %>
+      <center>
+        <div class="nopost">
+          <h4>No posts....</h4>
+        </div>
+      </center>
+
+      <!--  Posts-->
+      <% else %>
+      <div class="card-body">
+        <h2 class="margin_of_ap">All <%= @filter %> Posts</h2>
+          <% @filtered_other_posts.each do |p| %>
+            <div class="blog-card">
+              <div class="meta">
+                <div class="photo" style="background-image: url('<%= rails_blob_url(p.image) %>')"></div>
+              </div>
+              <div class="description">
+                <h1><%= p.title.truncate_words(10) %></h1>
+                <p><%= p.content.truncate_words(20) %></p>
+                <p class="read-more">
+                  <%= link_to "Read more", "/posts/#{p.id}", class:"btn btn-danger text-white" %>
+                </p>
+              </div>
+            </div>
+          <% end %>
+      </div>
+      <% end %>
+
+
+    <div class="class-footer">
+      <div class="d-flex">
+        <div class="mx-auto">
+          <%= will_paginate @filtered_other_posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<%= render "shared/floating_edit" %>
+
+<%= render "shared/footer" %>
+
+<script>
+    var menu = document.getElementById("home");
+    menu.classList.add("active");
+</script>

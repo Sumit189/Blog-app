@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @category = Post.select(:category).map(&:category).uniq
     @post = Post.new
   end
 
@@ -26,6 +27,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @category = Post.select(:category).map(&:category).uniq
     @post = Post.find(params[:id])
     if current_user.id.to_s != @post.uid.to_s and current_user.name.to_s != "admin"
       redirect_to @post, alert: "You can't edit this post."
@@ -45,6 +47,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if (current_user.id.to_s == @post.uid.to_s) || (current_user.name.to_s == "admin")
+      @post.image.purge
       @post.destroy
       redirect_to posts_path
     else
@@ -52,10 +55,9 @@ class PostsController < ApplicationController
     end
   end
 
-
   private
   def post_params
     params[:post].merge!(:uid => current_user.id.to_s)
-    params.require(:post).permit(:title, :content, :image, :uid)
+    params.require(:post).permit(:title, :content, :image, :uid, :category.downcase)
   end
 end

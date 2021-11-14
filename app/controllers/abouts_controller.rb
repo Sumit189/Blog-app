@@ -1,4 +1,5 @@
 class AboutsController < ApplicationController
+  before_action :authenticate_user!, only: :new
   def info
     @abouts = About.last
   end
