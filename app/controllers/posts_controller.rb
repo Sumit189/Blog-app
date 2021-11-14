@@ -45,8 +45,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if (current_user.id.to_s == @post.uid.to_s) || (current_user.name.to_s == "admin")
-      key = @post.image.split('amazonaws.com/')[1]
-      S3_BUCKET.object(key).delete
+      @post.image.purge
       @post.destroy
       redirect_to posts_path
     else
