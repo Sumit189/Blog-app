@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_14_103350) do
+ActiveRecord::Schema.define(version: 2021_11_14_142527) do
 
   create_table "abouts", force: :cascade do |t|
     t.string "about"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_11_14_103350) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "uid"
     t.string "category"
+    t.boolean "receive_comment_notification", default: false
   end
 
   create_table "users", force: :cascade do |t|
